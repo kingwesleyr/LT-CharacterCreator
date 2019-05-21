@@ -9,7 +9,7 @@ namespace CharacterCreator
     public class Character
     {
         public string Name { get; set; }
-        public string Race { get; set; }
+        public Race Race { get; set; }
         public Faction Faction { get; set; }
         public List<string> Skills { get; set; }
         public List<OccupationalSkill> OccupationalSkills { get; set; }
@@ -29,6 +29,19 @@ namespace CharacterCreator
         Unicorns,
         Vipers,
         Wolves
+    }
+    
+    public enum Race
+    {
+        Human,
+        Beastkin,
+        Drow,
+        Elf,
+        Dwarf,
+        Fey,
+        Olog,
+        Uruck,
+        Umbral
     }
 
     public class Year
