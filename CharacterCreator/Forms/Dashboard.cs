@@ -512,7 +512,7 @@ namespace CharacterCreator.Forms
                 dataGridView1.Rows.Remove(dgv);
             textBoxName.Text = string.Empty;
             comboBoxFaction.SelectedIndex = -1;
-            textBoxRace.Text = string.Empty;
+            comboBoxRace.SelectedIndex = -1;
             textBoxSpecialNotes.Text = string.Empty;
             multiColumnComboBoxOS.SelectedIndex = -1;
         }
@@ -521,7 +521,7 @@ namespace CharacterCreator.Forms
         {
             Char.Name = textBoxName.Text;
             Char.SpecialNotes = textBoxSpecialNotes.Text;
-            Char.Race = textBoxRace.Text;
+            Char.Race =  (Race)comboBoxFaction.SelectedItem;
             Char.Faction = (Faction)comboBoxFaction.SelectedItem;
             Char.Skills = new List<string>();
             foreach (KeyValuePair<string, int> key in CS)
@@ -561,7 +561,7 @@ namespace CharacterCreator.Forms
             textBoxName.Text = Char.Name;
             comboBoxFaction.SelectedItem = Char.Faction;
             textBoxSpecialNotes.Text = Char.SpecialNotes;
-            textBoxRace.Text = Char.Race;
+            comboBoxRace.SelectedItem = Char.Race;
             foreach (string str in Char.Skills)
                 switch (str)
                 {
